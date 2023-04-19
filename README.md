@@ -5,7 +5,7 @@ This repository contains the code for a Star Wars movies website, which showcase
 
 ## Live Demo
 
-Visit the hosted website here: [mellifluous-heliotrope-e06228.netlify.app]()
+Visit the hosted website here: [mellifluous-heliotrope-e06228.netlify.app](https://jade-ganache-504d89.netlify.app)
 
 ## Features
 
