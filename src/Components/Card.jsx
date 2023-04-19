@@ -25,7 +25,7 @@ const Card = ({film}) => {
   return (
 
       <div className="movie-card">
-        <div className='title'>
+        <div className='title'>   {/* font weight shuld be 700 */}
           <h3>{title}</h3>
           <span className="date">{formatDate(release_date)}</span>
         </div>
