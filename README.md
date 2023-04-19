@@ -1,4 +1,4 @@
-# swapi-react-task
+# swapis-react-task
 
 
 This repository contains the code for a Star Wars movies website, which showcases information about all the Star Wars films using the Star Wars API (SWAPI) available at [swapi.dev](https://swapi.dev/api/films). The website is inspired by [finmavis.github.io/swapi-task](https://finmavis.github.io/swapi-task) and follows the design and layout presented there.
