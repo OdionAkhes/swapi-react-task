@@ -37,8 +37,9 @@ const Cards = () => {
           <div className="movie-grid">
             {MovieDetails }
             </div>
+            // what happens when the API returns an empty array? What do you tell your user
       )}
-      
+      {/* you should display a message if there is an error */}
     </div>
   );
 };
