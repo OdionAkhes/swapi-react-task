@@ -15,10 +15,10 @@ Visit the hosted website here: [https://jade-ganache-504d89.netlify.app/](https:
 ## Screenshots
 
 Homepage:
-![Homepage](screenshots/homepage.png)
+![Homepage](/screenshots/homepage.png)
 
 Movie Details Page:
-![Movie Details Page](screenshots/movie-details.png)
+![Movie Details Page](/screenshots//movie-details.png)
 ### Compulsory Requirements
 
 - The website displays a **grid layout** listing all the Star Wars movies.
