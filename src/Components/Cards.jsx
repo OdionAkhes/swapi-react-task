@@ -7,7 +7,9 @@ import Loader from "./icons/Loader";
 
 const Cards = () => {
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [films, setFilms] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -15,8 +17,9 @@ const Cards = () => {
         setFilms(response.data.results);
         console.log(films);
       } catch (err) {
+         setError(true);
         console.log(err.message);
-        setFilms(null);
+        // setFilms(null);
       } finally {
         setLoading(false);
       }
@@ -34,8 +37,15 @@ const Cards = () => {
       {loading ? (
         <Loader className="loader" />
       ) : (
-        <div className="movie-grid">{movieCards}</div>
+        <div className="movie-grid">
+          {films.length === 0 ? (
+            <p className="message">No data available.</p>
+          ) : (
+            movieCards
+          )}
+        </div>
       )}
+      {error && <p className="error">Error fetching data.</p>}
     </div>
   );
 };

@@ -9,7 +9,7 @@ This repository contains the code for a Star Wars movies website, which showcase
 
 ## Live Demo
 
-Visit the hosted website here: [https://jade-ganache-504d89.netlify.app/](https://jade-ganache-504d89.netlify.app/)
+Visit the hosted website here: [https://neon-mandazi-066512.netlify.app/](https://neon-mandazi-066512.netlify.app/)
 
 ## Features
 ## Screenshots
@@ -31,10 +31,13 @@ Movie Details Page:
 - Clicking on the "Read More" link navigates the user to a details page that displays the specific movie's details.
 - The details page includes the following information:
 - Movie title
-  - Release date
+  - Description
   - Director
   - Producer
-  - Opening crawl
+  - Chracters
+  - Planets
+  - Species
+  - Vehicles
 - The details page has a "Back to List" link that takes the user back to the Star Wars homepage.
 
 ### Optional Requirements
