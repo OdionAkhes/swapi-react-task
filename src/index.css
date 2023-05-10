@@ -207,9 +207,10 @@ body {
 
 .details .back {
   align-self: flex-start;
-
 }
-
+.pointer{
+  cursor: pointer;
+}
 .details button {
   background-color: transparent;
   border: none;

@@ -25,6 +25,7 @@ const MovieDetail = () => {
         setLoading(true);
         const response = await axios.get(`https://swapi.dev/api/films/${id}`);
         const filmData = response.data;
+        console.log(filmData, "filmData");
 
         const [characters, planets, species, starships, vehicles] =
           await Promise.all([
@@ -54,8 +55,9 @@ const MovieDetail = () => {
 
     getFilmData();
   }, [id]);
-  const handleClick = () => {
-    navigate(-1);
+  const handleClick = () => { // this does not work WebGLUniformLocation, it should take you to the list pageXOffset, try changing the id on the url three times and clicking the back button, it should also have a cursor point
+    // navigate(-1);
+    navigate("/")
   };
 
   return (
@@ -66,16 +68,17 @@ const MovieDetail = () => {
         <div className="details">
           <header>
             <div className="back">
-              <button onClick={handleClick}>&larr; Back to list</button>
+              <button className="pointer" onClick={handleClick}>&larr; Back to list</button>
             </div>
             <h2>{film.title}</h2>
             <p>Director: {film.director}</p>
             <p>Producer: {film.producer}</p>
           </header>
-          <div style={{ marginBottom: "1rem"}}>
+          {/* <div style={{ marginBottom: "1rem"}}>
             <h4 className="gray">Description</h4>
             <p>{film.opening_crawl}</p>
-          </div>
+          </div> */}
+          <Section title="Description" description={film.opening_crawl} />
 
           <Section title="Characters" items={film.characters} />
           <Section title="Planets" items={film.planets} />
