@@ -25,8 +25,6 @@ const MovieDetail = () => {
         setLoading(true);
         const response = await axios.get(`https://swapi.dev/api/films/${id}`);
         const filmData = response.data;
-        console.log(filmData, "filmData");
-
         const [characters, planets, species, starships, vehicles] =
           await Promise.all([
             fetchData(filmData.characters),
@@ -44,7 +42,6 @@ const MovieDetail = () => {
           starships,
           vehicles,
         });
-        console.log(film);
       } catch (err) {
         console.error(err.message);
         setFilm(null);

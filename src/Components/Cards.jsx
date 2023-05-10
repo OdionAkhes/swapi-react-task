@@ -15,7 +15,6 @@ const Cards = () => {
       try {
         const response = await axios.get("https://swapi.dev/api/films");
         setFilms(response.data.results);
-        console.log(films);
       } catch (err) {
          setError(true);
         console.log(err.message);
