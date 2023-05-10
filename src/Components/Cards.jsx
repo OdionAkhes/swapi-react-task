@@ -6,46 +6,48 @@ import Loader from "./icons/Loader";
 
 
 const Cards = () => {
-
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchData = async () => {
       try {
-        const response = await axios.get(`https://swapi.dev/api/films`);
+        const response = await axios.get("https://swapi.dev/api/films");
         setFilms(response.data.results);
         console.log(films);
       } catch (err) {
+         setError(true);
         console.log(err.message);
         // setFilms(null);
       } finally {
         setLoading(false);
       }
-    }
-    getData();
+    };
+
+    fetchData();
   }, []);
 
-  const MovieDetails = films.map((film) => <Card key={film.episode_id} film={film} />);
+  const movieCards = films.map((film) => (
+    <Card key={film.episode_id} film={film}  />
+  ));
 
   return (
     <div className="App">
-  
       {loading ? (
-       <Loader className="loader"/>
+        <Loader className="loader" />
       ) : (
-          <div className="movie-grid">
-            {MovieDetails }
-            </div>
+        <div className="movie-grid">
+          {films.length === 0 ? (
+            <p className="message">No data available.</p>
+          ) : (
+            movieCards
+          )}
+        </div>
       )}
-      
+      {error && <p className="error">Error fetching data.</p>}
     </div>
   );
 };
 
 export default Cards;
-
-
-
-
-
